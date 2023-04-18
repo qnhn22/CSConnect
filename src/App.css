@@ -2,7 +2,6 @@
   max-width: 100%;
   margin: 0px;
   padding: 0px;
-  text-align: center;
 }
 
 nav {
@@ -10,13 +9,18 @@ nav {
   align-items: center;
   justify-content: space-between;
   background-color: #fb6f92;
-  overflow: hidden;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.nav-bar {
+  position: sticky;
 }
 
 .nav-links {
   list-style-type: none;
+  padding-top: 10px;
+  padding-right: 10px;
 }
 
 .link {
@@ -43,4 +47,10 @@ nav {
   height: 35px;
   border-radius: 15px;
   border: transparent;
+}
+
+.Post {
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
 }
