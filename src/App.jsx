@@ -2,7 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import NavBar from './components/NavBar'
 import Feed from './components/Feed'
-
+import New from './routes/New'
+import Update from './routes/Update'
 
 function App() {
 
@@ -10,6 +11,8 @@ function App() {
     <div className="App">
       <NavBar />
       <Feed />
+      <New />
+      <Update />
     </div>
   )
 }

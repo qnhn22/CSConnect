@@ -7,14 +7,16 @@ function Post({ title, time, category, author, likes }) {
             <Card.Body>
                 <div className='top-info'>
                     <p>dfafdafd</p>
-                    <p>category</p>
+                    <p>abcabcabc</p>
                 </div>
                 <Card.Link href="https://www.google.com/">
                     <Card.Title>fdsfdsf</Card.Title>
                 </Card.Link>
+                <Card.Text>
+                    dfsjflkafjlkdajflkdskjlfl;afjldkssfjlasfj;asdlfkladsjfldsjafa;lfkjalksdfadf
+                </Card.Text>
                 <div className='bottom-info'>
                     <p>20 Likes</p>
-                    <p>Author</p>
                 </div>
             </Card.Body>
         </Card>
