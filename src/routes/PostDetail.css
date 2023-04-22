@@ -1,0 +1,20 @@
+.card {
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.like-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.comment-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.edit-icon {
+    height: 20px;
+    width: 20px;
+}
