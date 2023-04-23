@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, Outlet } from 'react-router-dom'
 
 function NavBar() {
     return (
@@ -8,9 +9,9 @@ function NavBar() {
                 <input type='text' name='search' id='search' placeholder='Search...' />
             </form>
             <ul className='nav-links'>
-                <li className='link'><a href='https://www.google.com/'>Home</a></li>
-                <li className='link'><a href='https://www.google.com/'>New</a></li>
-                <li className='link'><a href='https://www.google.com/'>Profile</a></li>
+                <li className='link'><Link to="/">Home</Link></li>
+                <li className='link'><Link to="/new">New</Link></li>
+                <li className='link'><Link to="/">Profile</Link></li>
             </ul>
         </nav>
     )

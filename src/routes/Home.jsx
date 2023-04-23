@@ -1,9 +1,19 @@
-import React from 'react'
-import Feed from '../components/Feed'
+import React, { useEffect, useState } from 'react'
+import Post from "../components/Post"
 
-function Home() {
+function Home({ data }) {
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        setPosts(data)
+    }, [posts])
+
     return (
-        <Feed />
+        <div className='feed'>
+            <Post />
+            <Post />
+            <Post />
+        </div>
     )
 }
 

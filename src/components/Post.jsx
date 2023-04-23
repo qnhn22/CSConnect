@@ -12,9 +12,6 @@ function Post({ title, time, category, author, likes }) {
                 <Card.Link href="https://www.google.com/">
                     <Card.Title>fdsfdsf</Card.Title>
                 </Card.Link>
-                <Card.Text>
-                    dfsjflkafjlkdajflkdskjlfl;afjldkssfjlasfj;asdlfkladsjfldsjafa;lfkjalksdfadf
-                </Card.Text>
                 <div className='bottom-info'>
                     <p className='numLikes'>20 Likes</p>
                 </div>

@@ -15,20 +15,26 @@ import Home from './routes/Home';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />
+    element: <App />,
+    children: [
+      {
+        index: true,
+        element: <Home />
+      },
+      {
+        path: "/new",
+        element: <New />
+      },
+      {
+        path: "/update",
+        element: <Update />
+      },
+      {
+        path: "/postdetail",
+        element: <PostDetail />
+      }
+    ]
   },
-  {
-    path: "/new",
-    element: <New />
-  },
-  {
-    path: "/update",
-    element: <Update />
-  },
-  {
-    path: "/postdetail",
-    element: <PostDetail />
-  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
