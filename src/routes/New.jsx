@@ -18,12 +18,13 @@ function New() {
             title: post.title,
             category: post.category,
             content: post.content,
-            numLikes: post.numLikes,
+            num_likes: post.numLikes,
             image_link: post.image,
         }).select();
 
-        window.location = "/";
-        console.log(data)
+        window.location = "/"
+        // console.log(data)
+        // console.log(error)
     }
 
     const handleChange = (e) => {
