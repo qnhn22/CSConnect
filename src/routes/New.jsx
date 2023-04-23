@@ -11,6 +11,21 @@ function New() {
         image: "",
     })
 
+    const createPost = async (e) => {
+        e.preventDefault();
+        console.log("hehe")
+        const { data, error } = await supabase.from("Posts").insert({
+            title: post.title,
+            category: post.category,
+            content: post.content,
+            numLikes: post.numLikes,
+            image_link: post.image,
+        }).select();
+
+        window.location = "/";
+        console.log(data)
+    }
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setPost((prevPost) => ({
@@ -19,23 +34,8 @@ function New() {
         }))
     }
 
-    const createPost = async () => {
-        e.preventDefault()
-        const { data, error } = await supabase.from("Posts").insert({
-            title: post.title,
-            category: post.category,
-            content: post.content,
-            numLikes: post.numLikes,
-            image_link: post.image,
-        }).select()
-
-        console.log(data)
-
-        window.location = "/";
-    }
-
     return (
-        <form className='input-form'>
+        <form className='input-form' onSubmit={createPost} >
             <div className='input-field'>
                 <label className='input-label' htmlFor="title">Title</label>
                 <input type='text' id='title' name='title' value={post.title} onChange={handleChange} />
@@ -56,7 +56,7 @@ function New() {
                 <input type='text' id='image' name='image' value={post.image_link} onChange={handleChange} />
             </div>
 
-            <input type='submit' value="Post" onClick={createPost} />
+            <input type='submit' value="Post" />
         </form>
     )
 }
