@@ -11,7 +11,7 @@ function Home() {
                 .select()
                 .order("created_at", { ascending: false });
 
-            setPosts(data)
+            setPosts(data);
         }
         fetchPosts();
     }, [posts])
@@ -26,6 +26,7 @@ function Home() {
                         category={post.category}
                         time={post.created_at}
                         num_likes={post.num_likes}
+                        id={post.id}
                     />
                 )
             })}

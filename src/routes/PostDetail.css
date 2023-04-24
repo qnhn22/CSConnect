@@ -18,3 +18,12 @@
     height: 20px;
     width: 20px;
 }
+
+.detail-info {
+    display: flex;
+    font-size: 0.8rem;
+}
+
+.detail-time {
+    margin-left: auto;
+}
