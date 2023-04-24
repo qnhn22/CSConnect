@@ -5,6 +5,7 @@ import { supabase } from '../client';
 function Home() {
     const [posts, setPosts] = useState([]);
 
+
     useEffect(() => {
         const fetchPosts = async () => {
             const { data, error } = await supabase.from("Posts")
