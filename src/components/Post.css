@@ -1,0 +1,47 @@
+.Post {
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.card-title.h5 {
+    margin-bottom: 0px;
+}
+
+.top-info {
+    display: flex;
+}
+
+.bottom-info {
+    display: flex;
+}
+
+.category {
+    margin-left: auto;
+}
+
+.num-likes {
+    margin-left: auto;
+    margin-bottom: 0px;
+}
+
+.author {
+    margin-bottom: 0px;
+}
+
+.time {
+    margin-bottom: 0px;
+}

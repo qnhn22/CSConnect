@@ -5,6 +5,10 @@
   background-color: white;
 }
 
+.App {
+  margin-bottom: 20px;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -48,10 +52,4 @@ nav {
   height: 35px;
   border-radius: 15px;
   border: transparent;
-}
-
-.Post {
-  margin-top: 50px;
-  margin-right: auto;
-  margin-left: auto;
 }

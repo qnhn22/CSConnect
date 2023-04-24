@@ -18,9 +18,17 @@ function Home() {
 
     return (
         <div className='feed'>
-            <Post />
-            <Post />
-            <Post />
+            {posts && posts.map((post) => {
+                return (
+                    <Post
+                        key={post.id}
+                        title={post.title}
+                        category={post.category}
+                        time={post.created_at}
+                        num_likes={post.num_likes}
+                    />
+                )
+            })}
         </div>
     )
 }

@@ -1,22 +1,26 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
+import './Post.css'
 
-function Post({ title, time, category, author, likes }) {
+function Post({ title, time, category, author, num_likes }) {
     return (
-        <Card className='Post' style={{ width: '40rem', height: '12rem' }}>
-            <Card.Body>
-                <div className='top-info'>
-                    <p className='time'>dfafdafd</p>
-                    <p className='author'>abcabcabc</p>
-                </div>
-                <Card.Link href="https://www.google.com/">
-                    <Card.Title>fdsfdsf</Card.Title>
-                </Card.Link>
-                <div className='bottom-info'>
-                    <p className='numLikes'>20 Likes</p>
-                </div>
-            </Card.Body>
-        </Card>
+        <div className='Post'>
+            <Card style={{ width: '40rem', height: '10rem' }}>
+                <Card.Body>
+                    <div className='top-info'>
+                        <p className='time'>Posted at {time}</p>
+                        <div className='category'>{category}</div>
+                    </div>
+                    <Card.Link href="https://www.google.com/">
+                        <Card.Title>{title}</Card.Title>
+                    </Card.Link>
+                    <div className='bottom-info'>
+                        <div className='author'>By {author}</div>
+                        <p className='num-likes'>{num_likes} Likes</p>
+                    </div>
+                </Card.Body>
+            </Card>
+        </div>
     )
 }
 
