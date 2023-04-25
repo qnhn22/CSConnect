@@ -5,7 +5,8 @@ import "./Sorting.css"
 function Sorting() {
     return (
         <div className='sorting'>
-            <Button variant="secondary"></Button>
+            <Button variant="secondary">Newest</Button>
+            <Button variant="secondary">Most Liked</Button>
         </div>
     )
 }

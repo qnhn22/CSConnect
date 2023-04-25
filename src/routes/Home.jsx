@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Post from "../components/Post"
 import { supabase } from '../client';
+import Sorting from '../components/Sorting';
 
 function Home() {
     const [posts, setPosts] = useState([]);
@@ -25,6 +26,7 @@ function Home() {
                         key={post.id}
                         title={post.title}
                         category={post.category}
+                        author={post.author_id}
                         time={post.created_at}
                         num_likes={post.num_likes}
                         id={post.id}

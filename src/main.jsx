@@ -26,13 +26,13 @@ const router = createBrowserRouter([
         element: <New />
       },
       {
-        path: "/update",
-        element: <Update />
-      },
-      {
         path: "/post/:id",
         element: <PostDetail />
-      }
+      },
+      {
+        path: "/post/edit/:id",
+        element: <Update />
+      },
     ]
   },
 ]);
