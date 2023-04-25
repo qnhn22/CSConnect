@@ -5,21 +5,33 @@ import Sorting from '../components/Sorting';
 
 function Home() {
     const [posts, setPosts] = useState([]);
-
+    const [sortedByTime, setSortedByTime] = useState(true);
 
     useEffect(() => {
-        const fetchPosts = async () => {
-            const { data, error } = await supabase.from("Posts")
-                .select()
-                .order("created_at", { ascending: false });
+        let fetchPosts;
+        if (sortedByTime) {
+            fetchPosts = async () => {
+                const { data, error } = await supabase.from("Posts")
+                    .select()
+                    .order("created_at", { ascending: false });
 
-            setPosts(data);
+                setPosts(data);
+            }
+        } else {
+            fetchPosts = async () => {
+                const { data, error } = await supabase.from("Posts")
+                    .select()
+                    .order("num_likes", { ascending: false });
+
+                setPosts(data);
+            }
         }
         fetchPosts();
     }, [posts])
 
     return (
         <div className='feed'>
+            <Sorting sortedByTime={sortedByTime} setSortedByTime={setSortedByTime} />
             {posts && posts.map((post) => {
                 return (
                     <Post

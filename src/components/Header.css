@@ -3,3 +3,8 @@
     top: 0px;
     z-index: 1;
 }
+
+.search-icon {
+    height: 18px;
+    margin-right: 8px;
+}
