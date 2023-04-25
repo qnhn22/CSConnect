@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Post from "../components/Post"
 import { supabase } from '../client';
 import Sorting from '../components/Sorting';
+import { useOutletContext } from 'react-router-dom';
 
 function Home() {
     const [posts, setPosts] = useState([]);
     const [sortedByTime, setSortedByTime] = useState(true);
+    const [searchInput, setSearchInput] = useOutletContext();
 
     useEffect(() => {
         let fetchPosts;
@@ -32,7 +34,7 @@ function Home() {
     return (
         <div className='feed'>
             <Sorting sortedByTime={sortedByTime} setSortedByTime={setSortedByTime} />
-            {posts && posts.map((post) => {
+            {posts && posts.filter((post) => post.title.toLowerCase().includes(searchInput.toLowerCase())).map((post) => {
                 return (
                     <Post
                         key={post.id}
