@@ -17,7 +17,7 @@ function Post({ title, time, category, author, num_likes, id }) {
                     </Link>
                     <div className='bottom-info'>
                         <div className='author'>By {author}</div>
-                        <p className='num-likes'>{num_likes} Likes</p>
+                        <p className='num-likes'>{num_likes} {num_likes > 0 ? 'likes' : 'like'}</p>
                     </div>
                 </Card.Body>
             </Card>
