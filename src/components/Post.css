@@ -29,7 +29,7 @@ a {
     display: flex;
 }
 
-.category {
+.topic {
     margin-left: auto;
 }
 
@@ -38,7 +38,7 @@ a {
     margin-bottom: 0px;
 }
 
-.author {
+.user {
     margin-bottom: 0px;
 }
 

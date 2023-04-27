@@ -5,7 +5,7 @@ import { supabase } from '../client'
 function New() {
     const [post, setPost] = useState({
         title: "",
-        category: "",
+        topic: "",
         content: "",
         numLikes: 0,
         image: "",
@@ -16,7 +16,7 @@ function New() {
         console.log("hehe")
         const { data, error } = await supabase.from("Posts").insert({
             title: post.title,
-            category: post.category,
+            topic: post.topic,
             content: post.content,
             num_likes: post.numLikes,
             image_link: post.image,
@@ -43,8 +43,8 @@ function New() {
             </div>
 
             <div className='input-field'>
-                <label className='input-label' htmlFor="category">Category</label>
-                <input type='text' id='category' name='category' value={post.category} onChange={handleChange} />
+                <label className='input-label' htmlFor="topic">Topic</label>
+                <input type='text' id='topic' name='topic' value={post.topic} onChange={handleChange} />
             </div>
 
             <div className='input-field'>

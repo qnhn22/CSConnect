@@ -39,8 +39,8 @@ function Home() {
                     <Post
                         key={post.id}
                         title={post.title}
-                        category={post.category}
-                        author={post.author_id}
+                        topic={post.topic}
+                        user={post.user_id}
                         time={post.created_at}
                         num_likes={post.num_likes}
                         id={post.id}
