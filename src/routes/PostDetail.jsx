@@ -6,8 +6,15 @@ import { supabase } from '../client';
 import { Link } from 'react-router-dom';
 
 function PostDetail() {
-    let params = useParams()
-    const [post, setPost] = useState(null)
+    let params = useParams();
+    const [post, setPost] = useState(null);
+    const [comment, setComment] = useState({
+        content: "",
+        post_id: 0,
+        num_likes: 0,
+    });
+
+    const [comments, setComments] = useState([])
 
     useEffect(() => {
         const fetchPost = async () => {
@@ -23,6 +30,19 @@ function PostDetail() {
         fetchPost();
     }, [params.id])
 
+    useEffect(() => {
+        const fetchComments = async () => {
+            const { data, error } = await supabase.from("Comments")
+                .select()
+                .eq("post_id", `${params.id}`)
+
+            // console.log(data)
+            // console.log(error)
+            setComments(data)
+        }
+        fetchComments();
+    }, [comments])
+
     const handleLike = async () => {
         const { data, error } = await supabase.from("Posts")
             .update({ num_likes: `${post.num_likes + 1}` })
@@ -30,6 +50,29 @@ function PostDetail() {
             .select()
 
         setPost(data[0]);
+    }
+
+    const handleCommentInput = (e) => {
+        setComment((prev) => ({
+            ...prev,
+            content: e.target.value,
+        }))
+    }
+
+    const createComment = async (e) => {
+        e.preventDefault();
+        const { data, error } = await supabase.from("Comments")
+            .insert({
+                content: comment.content,
+                post_id: post.id,
+                num_likes: 0,
+            })
+            .select();
+
+        setComment((prev) => ({
+            ...prev,
+            content: "",
+        }));
     }
 
     return (
@@ -67,15 +110,27 @@ function PostDetail() {
                             </Link>
                         </div>
 
-                        <div className='comment-top'>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="comment-icon">
-                                <path fillRule="evenodd" d="M10 2c-2.236 0-4.43.18-6.57.524C1.993 2.755 1 4.014 1 5.426v5.148c0 1.413.993 2.67 2.43 2.902 1.168.188 2.352.327 3.55.414.28.02.521.18.642.413l1.713 3.293a.75.75 0 001.33 0l1.713-3.293a.783.783 0 01.642-.413 41.102 41.102 0 003.55-.414c1.437-.231 2.43-1.49 2.43-2.902V5.426c0-1.413-.993-2.67-2.43-2.902A41.289 41.289 0 0010 2zM6.75 6a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5zm0 2.5a.75.75 0 000 1.5h3.5a.75.75 0 000-1.5h-3.5z" clipRule="evenodd" />
-                            </svg>
-                            <h6>Comment</h6>
-                        </div>
+                        <hr />
+
+                        <form className='comment-form' onSubmit={createComment}>
+                            <div className='comment-label'>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="comment-icon">
+                                    <path fillRule="evenodd" d="M10 2c-2.236 0-4.43.18-6.57.524C1.993 2.755 1 4.014 1 5.426v5.148c0 1.413.993 2.67 2.43 2.902 1.168.188 2.352.327 3.55.414.28.02.521.18.642.413l1.713 3.293a.75.75 0 001.33 0l1.713-3.293a.783.783 0 01.642-.413 41.102 41.102 0 003.55-.414c1.437-.231 2.43-1.49 2.43-2.902V5.426c0-1.413-.993-2.67-2.43-2.902A41.289 41.289 0 0010 2zM6.75 6a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5zm0 2.5a.75.75 0 000 1.5h3.5a.75.75 0 000-1.5h-3.5z" clipRule="evenodd" />
+                                </svg>
+                                <label htmlFor='comment-input' className='comment-input-label'><h6>Comments</h6></label>
+                            </div>
+                            <textarea id='comment-input' name='comment-input' value={comment.content} onChange={handleCommentInput} />
+                            <input type='submit' value="Post" />
+                        </form>
 
                         <div className='comment-container'>
-
+                            <ul>
+                                {comments && comments.map((cmt) => {
+                                    return (
+                                        <li key={cmt.id}>{cmt.content}</li>
+                                    )
+                                })}
+                            </ul>
                         </div>
                     </Card.Body>
                 </Card>
@@ -86,8 +141,3 @@ function PostDetail() {
 
 export default PostDetail;
 
-
-
-{/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="delete-icon">
-<path fill-rule="evenodd" d="M8.75 1A2.75 2.75 0 006 3.75v.443c-.795.077-1.584.176-2.365.298a.75.75 0 10.23 1.482l.149-.022.841 10.518A2.75 2.75 0 007.596 19h4.807a2.75 2.75 0 002.742-2.53l.841-10.52.149.023a.75.75 0 00.23-1.482A41.03 41.03 0 0014 4.193V3.75A2.75 2.75 0 0011.25 1h-2.5zM10 4c.84 0 1.673.025 2.5.075V3.75c0-.69-.56-1.25-1.25-1.25h-2.5c-.69 0-1.25.56-1.25 1.25v.325C8.327 4.025 9.16 4 10 4zM8.58 7.72a.75.75 0 00-1.5.06l.3 7.5a.75.75 0 101.5-.06l-.3-7.5zm4.34.06a.75.75 0 10-1.5-.06l-.3 7.5a.75.75 0 101.5.06l.3-7.5z" clip-rule="evenodd" />
-</svg>  */}

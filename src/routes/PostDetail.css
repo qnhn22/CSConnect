@@ -15,7 +15,7 @@
     height: 20px;
     width: 20px;
     margin-top: 20px;
-    margin-right: 14px;
+    margin-right: 12px;
 }
 
 .edit-icon {
@@ -48,8 +48,10 @@
 }
 
 .like-button {
-    height: 50px;
-    padding-top: 0px;
+    height: 48px;
+    width: 60px;
+    margin-top: 10px;
+    padding-top: 5px;
     padding-bottom: 0px;
     padding-left: 18px;
     padding-right: 18px;
@@ -57,7 +59,7 @@
 
 .num_likes {
     margin-left: 10px;
-    margin-top: 15px;
+    margin-top: 22px;
 }
 
 .detail-control {
@@ -65,6 +67,8 @@
 }
 
 .edit-button {
+    height: 48px;
+    width: 60px;
     margin-top: 15px;
     margin-left: auto;
 }
@@ -73,10 +77,16 @@
     margin-left: auto;
 }
 
-.comment-top {
+.comment-label {
     display: flex;
 }
 
-.comment-top>h6 {
+.comment-input-label>h6 {
     margin-top: 19px;
+}
+
+#comment-input {
+    margin-top: 10px;
+    width: 100%;
+    height: 150px;
 }
