@@ -120,7 +120,9 @@ function PostDetail() {
                                 <label htmlFor='comment-input' className='comment-input-label'><h6>Comments</h6></label>
                             </div>
                             <textarea id='comment-input' name='comment-input' value={comment.content} onChange={handleCommentInput} />
-                            <input type='submit' value="Post" />
+                            <div className='comment-btn-div'>
+                                <input id="comment-post-btn" type='submit' value="Post" />
+                            </div>
                         </form>
 
                         <div className='comment-container'>
