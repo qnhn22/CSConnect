@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function Post({ title, time, topic, user, num_likes, id }) {
     return (
         <div className='Post'>
-            <Card style={{ width: '40rem', height: '10rem' }}>
+            <Card style={{ width: '34rem', height: '12rem' }}>
                 <Card.Body>
                     <div className='top-info'>
                         <p className='time'>Posted at {time}</p>
