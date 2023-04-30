@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function Post({ title, time, topic, user, num_likes, id }) {
     return (
-        <div className="feed-post" style={{ width: '40rem', height: '10rem' }}>
+        <div className="feed-post" style={{ width: '40rem', height: '12rem' }}>
             <div className='top-info'>
                 <p className='time'>Posted at {time}</p>
                 <div className='topic'>{topic}</div>
