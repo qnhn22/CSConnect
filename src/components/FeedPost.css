@@ -1,15 +1,12 @@
-.Post {
+.feed-post {
     margin-top: 50px;
     margin-right: auto;
-    margin-left: auto;
-}
-
-.card-body {
+    border: solid #dee2e6;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px;
 }
 
 a {
@@ -17,7 +14,7 @@ a {
     color: black;
 }
 
-.card-title.h5 {
+.feed-post-title {
     margin-bottom: 0px;
 }
 

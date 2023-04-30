@@ -1,10 +1,9 @@
 import React from 'react'
-import Nav from 'react-bootstrap/Nav';
 import "./Sidebar.css"
 
 function Sidebar() {
     return (
-        <aside>
+        <aside className='sidebar'>
             <ul>
                 <li>fkjafda</li>
                 <li>fkjafda</li>

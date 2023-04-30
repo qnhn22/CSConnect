@@ -1,7 +1,17 @@
+@media (min-width: 768px) {
+
+    .container,
+    .container-md,
+    .container-sm {
+        max-width: 100%;
+    }
+}
+
 .home {
     display: flex;
 }
 
 .container {
+    width: 100%;
     margin: 0px;
 }
