@@ -6,12 +6,10 @@ function Sidebar() {
     return (
         <aside className='sidebar'>
             <ul>
-                <li><Link>Learning</Link></li>
-                <li><Link>Career</Link></li>
-                <li><Link>Interview</Link></li>
-                <li><Link>Technical questions</Link></li>
-                <li><Link>Projects</Link></li>
-                <li><Link>Events</Link></li>
+                <li><Link to={'/learning'}>Learning</Link></li>
+                <li><Link to={'/career'}>Career</Link></li>
+                <li><Link to={'/technical-questions'}>Technical questions</Link></li>
+                <li><Link to={'/events'}>Events</Link></li>
             </ul>
         </aside>
     )

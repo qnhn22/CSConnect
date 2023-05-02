@@ -1,6 +1,5 @@
 import React from 'react'
 import './FeedPost.css'
-import { Link } from 'react-router-dom'
 
 function Post({ title, time, topic, user, num_likes, id }) {
     return (

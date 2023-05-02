@@ -1,5 +1,6 @@
 .sidebar {
     margin-top: 50px;
+    margin-left: 5%;
     width: 80%;
     border: solid #dee2e6;
     border-radius: 10px;
@@ -12,4 +13,8 @@
 .sidebar>ul>li {
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+a:active {
+    color: #747bff;
 }

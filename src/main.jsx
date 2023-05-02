@@ -11,6 +11,10 @@ import New from './routes/New';
 import Update from './routes/Update';
 import PostDetail from './routes/PostDetail';
 import Home from './routes/Home';
+import LearningTopic from './routes/LearningTopic';
+import CareerTopic from './routes/CareerTopic';
+import TechQuesTopic from './routes/TechQuesTopic';
+import EventTopic from './routes/EventTopic';
 
 const router = createBrowserRouter([
   {
@@ -19,11 +23,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "/new",
-        element: <New />
+        element: <New />,
       },
       {
         path: "/post/:id",
@@ -32,6 +36,22 @@ const router = createBrowserRouter([
       {
         path: "/post/edit/:id",
         element: <Update />
+      },
+      {
+        path: "/learning",
+        element: <LearningTopic />
+      },
+      {
+        path: "/career",
+        element: <CareerTopic />
+      },
+      {
+        path: "/technical-questions",
+        element: <TechQuesTopic />
+      },
+      {
+        path: "/events",
+        element: <EventTopic />
       },
     ]
   },

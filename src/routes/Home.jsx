@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import FeedPost from "../components/FeedPost"
-import { supabase } from '../client';
 import Sorting from '../components/Sorting';
 import { useOutletContext } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
@@ -10,31 +9,7 @@ import Col from 'react-bootstrap/Col';
 import "./Home.css"
 
 function Home() {
-    const [posts, setPosts] = useState([]);
-    const [sortedByTime, setSortedByTime] = useState(true);
-    const [searchInput, setSearchInput] = useOutletContext();
-
-    useEffect(() => {
-        let fetchPosts;
-        if (sortedByTime) {
-            fetchPosts = async () => {
-                const { data, error } = await supabase.from("Posts")
-                    .select()
-                    .order("created_at", { ascending: false });
-
-                setPosts(data);
-            }
-        } else {
-            fetchPosts = async () => {
-                const { data, error } = await supabase.from("Posts")
-                    .select()
-                    .order("num_likes", { ascending: false });
-
-                setPosts(data);
-            }
-        }
-        fetchPosts();
-    }, [posts])
+    const [searchInput, posts, sortedByTime, setSortedByTime] = useOutletContext();
 
     return (
         <Container>
