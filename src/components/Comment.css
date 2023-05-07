@@ -1,0 +1,11 @@
+.comment {
+    border: solid #dee2e6;
+    margin-top: 20px;
+    padding: 3px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comment_num_likes {
+    margin-bottom: 3px;
+}

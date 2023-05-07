@@ -4,6 +4,7 @@ import './PostDetail.css'
 import { useParams } from 'react-router-dom';
 import { supabase } from '../client';
 import { Link } from 'react-router-dom';
+import Comment from '../components/Comment';
 
 function PostDetail() {
     let params = useParams();
@@ -126,13 +127,15 @@ function PostDetail() {
                         </form>
 
                         <div className='comment-container'>
-                            <ul>
-                                {comments && comments.map((cmt) => {
-                                    return (
-                                        <li key={cmt.id}>{cmt.content}</li>
-                                    )
-                                })}
-                            </ul>
+                            {comments && comments.map((cmt) => {
+                                return (
+                                    <Comment
+                                        key={cmt.id}
+                                        content={cmt.content}
+                                        num_likes={cmt.num_likes}
+                                    />
+                                )
+                            })}
                         </div>
                     </Card.Body>
                 </Card>
