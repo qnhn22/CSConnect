@@ -1,11 +1,13 @@
 .comment {
     border: solid #dee2e6;
-    margin-top: 20px;
-    padding: 3px;
+    margin-top: 40px;
+    padding: 5px;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 8px;
 }
 
-.comment_num_likes {
-    margin-bottom: 3px;
+.cmt-like-button {
+    width: 50px;
+    height: 40px;
 }

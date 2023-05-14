@@ -36,6 +36,7 @@ function PostDetail() {
             const { data, error } = await supabase.from("Comments")
                 .select()
                 .eq("post_id", `${params.id}`)
+                .order("created_at", { ascending: false });
 
             // console.log(data)
             // console.log(error)
@@ -131,6 +132,7 @@ function PostDetail() {
                                 return (
                                     <Comment
                                         key={cmt.id}
+                                        id={cmt.id}
                                         content={cmt.content}
                                         num_likes={cmt.num_likes}
                                     />
