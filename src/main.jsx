@@ -15,6 +15,7 @@ import LearningTopic from './routes/LearningTopic';
 import CareerTopic from './routes/CareerTopic';
 import TechQuesTopic from './routes/TechQuesTopic';
 import EventTopic from './routes/EventTopic';
+import Chat from './routes/Chat';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/chat",
+        element: <Chat />,
       },
       {
         path: "/new",

@@ -22,6 +22,7 @@ function Header({ searchInput, setSearchInput }) {
             <ul className='nav-links'>
                 <li className='link'><Link to="/">Home</Link></li>
                 <li className='link'><Link to="/new">New</Link></li>
+                <li className='link'><Link to="/chat">Chat</Link></li>
                 <li className='link'><Link to="/">Profile</Link></li>
             </ul>
         </nav>
