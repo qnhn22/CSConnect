@@ -39,12 +39,12 @@ function New() {
         <form className='input-form' onSubmit={createPost} >
             <div className='input-field'>
                 <label className='input-label' htmlFor="title">Title</label>
-                <input type='text' id='title' name='title' value={post.title} onChange={handleChange} />
+                <input type='text' id='title' name='title' value={post.title} onChange={handleChange} required />
             </div>
 
             <div className='input-field'>
                 <label className='input-label' htmlFor="topic">Topic</label>
-                <input type='text' id='topic' name='topic' value={post.topic} onChange={handleChange} />
+                <input type='text' id='topic' name='topic' value={post.topic} onChange={handleChange} required />
             </div>
 
             <div className='input-field'>

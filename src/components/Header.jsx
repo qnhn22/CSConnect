@@ -10,7 +10,7 @@ function Header({ searchInput, setSearchInput }) {
 
     return (
         <nav className='header'>
-            <Link to="/"><h2 id="app-name">TECHmates</h2></Link>
+            <Link to="/"><h2 id="app-name">CSConnect</h2></Link>
 
             <form>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="search-icon">
