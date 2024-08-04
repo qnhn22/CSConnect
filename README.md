@@ -1,6 +1,6 @@
 # *CSConnect*
 
-This web app **is a forum allowing CS students to create posts, leave comments, upvote posts, search posts and sort posts empowering CS commnity to discuss learning resources, technical questions and interview tips**
+This web app **is a site for CS students - create posts, leave comments, upvote posts, search posts and sort posts empowering CS commnity to discuss learning resources, technical questions and interview tips**
 
 Technologies: React, React-router, Supabase, Figma
 
